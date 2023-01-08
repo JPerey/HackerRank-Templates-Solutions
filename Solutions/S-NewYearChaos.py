@@ -42,10 +42,65 @@ import sys
 
 def minimumBribes(q):
     # copy to your preferred IDE and code there and then copy + paste into HackerRank once solution is found
-    pass
+    bribe_count = 0
+
+    for index, value in enumerate(q):
+        abs_distance = abs(value - index)
+        if abs_distance > 3:
+            print("Too chaotic")
+            return
+        else:
+            if (index - 1) >= 0:
+                if (index-1) == 0:
+                    for digit in q[0: index]:
+                        if digit > value:
+                            bribe_count += 1
+
+                else:
+                    for digit in q[0: index]:
+                        if digit > value:
+                            bribe_count += 1
+    print(bribe_count)
 
 
-test_list = [2, 1, 5, 3, 4]  # sample test case 0
+test_list = [1, 2, 5, 3, 4, 7, 8, 6]  # sample test case 0
 response = minimumBribes(test_list)
 
 print(f"response: {response}")
+
+
+'''
+
+    i = 0
+    total_bribe_amount = 0
+
+    def helperMinus(elem, index):  # func to check distance and if anyone bribed someone too much
+        abs_distance = abs(elem - (index + 1))
+        print(
+            f"elem: {elem} || index: {index+1} || abs distance: {abs_distance}")
+        if abs_distance > 2:
+            return False
+        else:
+            return True
+
+    def helperBribes(current_elem, values_before_elem):
+
+    for digit in q:
+        try:
+
+            chaos_check, bribe_amount = helperMinus(digit, i, q[i+1])
+            total_bribe_amount += bribe_amount
+            print(
+                f"i: {i} || bribe_amount: {bribe_amount} || total_bribe_amount: {total_bribe_amount}")
+            print("============")
+            if chaos_check:
+                i += 1
+                pass
+            else:
+                return "Too Chaotic"
+        except:
+            pass
+
+    return total_bribe_amount
+
+'''

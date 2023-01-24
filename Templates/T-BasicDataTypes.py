@@ -3,16 +3,23 @@ The provided code stub will read in a dictionary containing key/value pairs of n
 
 Example
 
+marks key: value pairs are
+"alpha" : [20 , 30, 40],
+"beta" : [30, 50, 70],
+query_name = "beta"
 
 
-
-The query_name is 'beta'. beta's average score is .
+The query_name is 'beta'. beta's average score is (30 + 50 + 70)/3 = 50.0.
 
 Input Format
 
 The first line contains the integer , the number of students' records. The next  lines contain the names and marks obtained by a student, each value separated by a space. The final line contains query_name, the name of a student to query.
 
 Constraints
+
+- 2 <_ n <_ 10
+- 0 <_ marks[i] <_ 100
+- length of marks arrays = 3
 
 Output Format
 

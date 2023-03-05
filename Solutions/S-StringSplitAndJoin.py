@@ -1,11 +1,6 @@
-def split_and_join(line):
-    # write your code here
-    split_lines = line.replace(" ", "-")
-
-    return split_lines
-
-
 if __name__ == '__main__':
-    line = input()
-    result = split_and_join(line)
-    print(result)
+    n = int(input())
+    integer_list = map(int, input().split())
+    tuple_list = tuple(integer_list)
+    tuple_hash = hash(tuple_list)
+    print(tuple_hash)
